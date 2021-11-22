@@ -1,5 +1,5 @@
 import "./chatbox.scss";
-
+import moment from "moment";
 const ChatBox = ({ message }) => {
   return (
     <div
@@ -14,7 +14,9 @@ const ChatBox = ({ message }) => {
             message?.options.map((option) => (
               <div className="optioned-message-option">
                 <p className="optioned-message-title">{option?.optionText}</p>
-                <p className="optioned-message-subtitle">{option?.optionSubText}</p>
+                <p className="optioned-message-subtitle">
+                  {option?.optionSubText}
+                </p>
               </div>
             ))}
         </div>
@@ -23,7 +25,8 @@ const ChatBox = ({ message }) => {
       <small
         className={`${message?.messageType === "optionedMessage" && "dnone"}`}
       >
-        5:550pm <i className="fas fa-check-double"></i>
+        {moment.unix(message?.timestamp).format("hh:mm:A")}{" "}
+        <i className="fas fa-check-double"></i>
       </small>
     </div>
   );

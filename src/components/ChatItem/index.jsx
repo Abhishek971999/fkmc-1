@@ -1,5 +1,5 @@
+import moment from "moment";
 import "./chatitem.scss";
-
 const ChatItem = ({ chat, selectChat }) => {
   return (
     <div className="chatitem-container" onClick={() => selectChat(chat?.id)}>
@@ -13,7 +13,7 @@ const ChatItem = ({ chat, selectChat }) => {
           {chat?.messageList[chat?.messageList?.length - 1]?.message}
         </p>
       </div>
-      <div>5:57pm</div>
+      <div> {moment.unix(chat?.latestMessageTimestamp).format("hh:mm:A")}</div>
     </div>
   );
 };
