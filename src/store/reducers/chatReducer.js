@@ -35,6 +35,18 @@ const chatReducer = (state = initialState, action) => {
     case actionTypes.ADD_MESSAGE:
       return {
         ...state,
+        chats: state.chats.map((chat) => {
+          if (chat.id === state?.selectedChat?.id) {
+            return {
+              ...state?.selectedChat,
+              messageList: [
+                ...state?.selectedChat?.messageList,
+                action.payload,
+              ],
+            };
+          }
+          return chat;
+        }),
         selectedChat: {
           ...state?.selectedChat,
           messageList: [...state?.selectedChat?.messageList, action.payload],
