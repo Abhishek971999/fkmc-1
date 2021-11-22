@@ -1,0 +1,25 @@
+.selectedchat-header-container {
+  background-color: var(--white);
+  padding: 21px;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+
+  .selectedchat-header-icon-container {
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+    }
+  }
+
+  h4 {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,38 @@
+.chatitem-container {
+  background-color: var(--white);
+  display: flex;
+  padding: 10px 10px 20px;
+  border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider);
+  cursor: pointer;
+  &.isactive {
+    background-color: var(--active-chat);
+  }
+  .chatitem-icon-container {
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    .chatitem-icon {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+    }
+  }
+  .chatitem-text-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    p {
+      margin: 0;
+    }
+    .chatitem-order-no {
+      margin-top: 4px;
+    }
+    .chatitem-message {
+      margin-top: 10px;
+      color: var(--muted);
+    }
+  }
+}

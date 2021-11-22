@@ -1,0 +1,27 @@
+.chatlist-header-container {
+  background-color: var(--white);
+  padding: 20px;
+  h4 {
+    font-size: 20px;
+  }
+  input {
+    border: none;
+    border-bottom: 2px solid black;
+    width: 100%;
+    margin-top: 12px;
+    outline: none;
+
+    &::-webkit-input-placeholder {
+      color: var(--muted);
+    }
+    &:-moz-placeholder {
+      color: var(--muted);
+    }
+    &::-moz-placeholder {
+      color: var(--muted);
+    }
+    &:-ms-input-placeholder {
+      color: var(--muted);
+    }
+  }
+}

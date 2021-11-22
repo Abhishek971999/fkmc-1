@@ -1,0 +1,18 @@
+.chat-application-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+
+  .chat-application-inbox,
+  .chat-application-selected-chat {
+    flex: 1;
+  }
+  .chat-application-inbox {
+    max-height: 100vh;
+    overflow: scroll;
+  }
+  .chat-application-selected-chat {
+    position: relative;
+    border-left: 2px solid var(--muted);
+  }
+}

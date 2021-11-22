@@ -1,0 +1,29 @@
+.chatmessage-box-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  .chatmessage-box {
+    position: relative;
+    input {
+      border: 1px solid var(--muted);
+      outline: none;
+      width: 100%;
+      padding: 30px 60px 30px 10px;
+    }
+    button {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      i {
+        font-size: 20px;
+        color: var(--muted);
+      }
+    }
+  }
+}
