@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import "./chatlistheader.scss";
 import { filterChat } from "../../store/actions/chatActions";
 const ChatListHeader = () => {
   const dispatch = useDispatch();
   const [filter, setFilter] = useState("");
+  const debouncedEl = useRef();
 
-  const onChange = (e) => {
+  const onChange = (val) => dispatch(filterChat(val));
+
+  const handleChange = (e) => {
     setFilter(e.target.value);
-    dispatch(filterChat(e.target.value));
+    clearTimeout(debouncedEl.current);
+    debouncedEl.current = setTimeout(() => onChange(e.target.value), 300);
   };
 
   return (
@@ -16,7 +20,7 @@ const ChatListHeader = () => {
       <h4>Filter by Title / Order ID</h4>
       <input
         placeholder="Start typing to search"
-        onChange={onChange}
+        onChange={handleChange}
         value={filter}
       />
     </div>

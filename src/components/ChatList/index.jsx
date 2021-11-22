@@ -21,6 +21,7 @@ const ChatList = () => {
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error...</div>;
+  
   return (
     <Fragment>
       {filteredChats === null ? (

@@ -5,7 +5,6 @@ import ChatBox from "../ChatBox";
 import "./selectedchat.scss";
 const SelectedChat = () => {
   const { selectedChat } = useSelector((state) => state.chats);
-  console.log(selectedChat);
   return (
     <div className="selectedchat-message-list">
       {selectedChat?.messageList.length > 0 ? (
