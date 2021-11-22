@@ -3,9 +3,11 @@
   flex-direction: row;
   min-height: 100vh;
 
-  .chat-application-inbox,
-  .chat-application-selected-chat {
+  .chat-application-inbox{
     flex: 1;
+  }
+  .chat-application-selected-chat {
+    flex: 2;
   }
   .chat-application-inbox {
     max-height: 100vh;

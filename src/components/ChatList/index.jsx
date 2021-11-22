@@ -23,14 +23,19 @@ const ChatList = () => {
   if (error) return <div>Error...</div>;
   return (
     <Fragment>
-      {filteredChats === null &&
-        chats?.map((chat) => (
-          <ChatItem key={chat.id} chat={chat} selectChat={selectChat} />
-        ))}
-      {filteredChats !== null &&
-        filteredChats?.map((chat) => (
-          <ChatItem key={chat.id} chat={chat} selectChat={selectChat} />
-        ))}
+      {filteredChats === null ? (
+        <Fragment>
+          {chats?.map((chat) => (
+            <ChatItem key={chat.id} chat={chat} selectChat={selectChat} />
+          ))}
+        </Fragment>
+      ) : (
+        <Fragment>
+          {filteredChats?.map((chat) => (
+            <ChatItem key={chat.id} chat={chat} selectChat={selectChat} />
+          ))}
+        </Fragment>
+      )}
     </Fragment>
   );
 };
