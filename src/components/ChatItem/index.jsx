@@ -1,4 +1,4 @@
-import moment from "moment";
+import { formatDate } from "../../utils";
 import "./chatitem.scss";
 const ChatItem = ({ chat, selectChat }) => {
   return (
@@ -13,7 +13,7 @@ const ChatItem = ({ chat, selectChat }) => {
           {chat?.messageList[chat?.messageList?.length - 1]?.message}
         </p>
       </div>
-      <div> {moment.unix(chat?.latestMessageTimestamp).format("D:MM:YY")}</div>
+      <div> {formatDate(chat?.latestMessageTimestamp)}</div>
     </div>
   );
 };
